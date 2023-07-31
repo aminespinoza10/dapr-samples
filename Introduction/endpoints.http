@@ -1,0 +1,21 @@
+#The following line is to set Dapr port
+@dapr_endpoint=http://localhost:43797
+
+### OPERATION: Send a value to the state store
+POST {{dapr_endpoint}}/v1.0/state/statestore
+Content-Type: application/json
+
+[
+    {
+        "key": "name",
+        "value": "Felipe Bello"
+    }
+]
+
+### OPERATION: Get a value from the state store
+GET {{dapr_endpoint}}/v1.0/state/statestore/name
+Content-Type: application/json
+
+### OPERATION: Delete a value from the state store
+DELETE {{dapr_endpoint}}/v1.0/state/statestore/name
+Content-Type: application/json
